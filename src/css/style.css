@@ -1,0 +1,212 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 2rem;
+    color: #333;
+    cursor: url(/src/favicons/cursor.png), auto;
+}
+
+body::before {
+    content: ''; 
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Coloca a imagem no pseudo-elemento */
+    background-image: url('/src/imagens/fundo.png.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+    /* Mantém a imagem no fundo */
+    z-index: -1; 
+}
+
+/* Cria uma "camada" escura sobre a imagem.
+   É uma abordagem mais robusta para manter o contraste
+   com o texto principal.
+*/
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Cor preta com 60% de opacidade. Ajuste o valor! */
+    z-index: -1;
+}
+
+/* Opcional: Adicione um z-index no seu container para garantir que ele fique na frente */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative; /* Necessário para o z-index funcionar */
+    z-index: 1; 
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    color: #ffffff;
+    margin-bottom: 2rem;
+    text-shadow: 4px 4px 4px #661766;
+}
+
+.search-box {
+    margin-bottom: 1.5rem;
+}
+
+input[type="text"], textarea {
+    padding: 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 0.5rem;
+    width: 250px;
+    cursor: url(/src/favicons/digit.png), text;
+    caret-color: #e100ff;
+}
+
+button {
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #41025e;
+    color: white;
+    cursor: url(/src/favicons/cima.png), auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05); /* aumenta levemente */
+    box-shadow: 0 8px 20px rgb(53, 1, 73); /* sombra em volta */
+    background-color: #61049b; /* opcional: muda cor ao passar o mouse */
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer; /* Adicionado para indicar que é clicável */
+}
+
+.card:hover {
+    transform: scale(1.03) translateY(-10px);
+    box-shadow: 0 8px 16px rgb(94, 0, 138);
+}
+
+.card-img-container {
+    padding: 1rem;
+    background-color: #868484;
+}
+
+.card-img-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+}
+
+.card-info {
+    padding: 1rem;
+    text-align: left;
+}
+
+.card-info h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.card-info p {
+    margin: 0.2rem 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Estilos para o Pop-up (Modal) */
+.modal {
+    display: none; /* Oculta o modal por padrão */
+    position: fixed; /* Fixa na tela */
+    z-index: 100; /* Garante que ele fique acima de tudo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Adiciona barra de rolagem se o conteúdo for muito grande */
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente */
+    backdrop-filter: blur(5px); /* Efeito de desfoque no fundo */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* Centraliza verticalmente e horizontalmente */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Largura do modal */
+    max-width: 600px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    color: #333; /* Cor do texto dentro do modal */
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+#modal-card-info h3 {
+    text-align: center;
+    color: #41025e;
+}
+
+#modal-card-info p {
+    line-height: 1.5;
+}
+
+#modal-card-info strong {
+    color: #61049b;
+}
+
+.card-details-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.card-details-header img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
