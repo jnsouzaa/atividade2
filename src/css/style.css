@@ -7,7 +7,7 @@ body {
     margin: 0;
     padding: 2rem;
     color: #333;
-    cursor: url(./src/favicons/cursor.png), auto;
+    cursor: url(../favicons/cursor.png), auto;
 }
 
 body::before {
@@ -19,7 +19,7 @@ body::before {
     height: 100%;
     
     /* Coloca a imagem no pseudo-elemento */
-    background-image: url('./src/imagens/fundo.png.jpg');
+    background-image: url('../imagens/fundo.png.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -74,7 +74,7 @@ input[type="text"], textarea {
     border-radius: 5px;
     margin-right: 0.5rem;
     width: 250px;
-    cursor: url(./src/favicons/digit.png), text;
+    cursor: url(../favicons/digit.png), text;
     caret-color: #e100ff;
 }
 
@@ -84,7 +84,7 @@ button {
     border-radius: 5px;
     background-color: #41025e;
     color: white;
-    cursor: url(./src/favicons/cima.png), auto;
+    cursor: url(../favicons/cima.png), auto;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
